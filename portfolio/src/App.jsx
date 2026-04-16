@@ -1,30 +1,33 @@
 import avatar from './assets/avatar.jpg'
 import './App.css'
 import SkillsRadar from './SkillsRadar';
-import { Home, User, Code, EnvelopeAlt, BriefcaseAlt, Github, LinkedinSquare, Envelope, Git, CSharp, Mongodb, TailwindCss, Nodejs, Typescript, Javascript, Postgresql } from '@boxicons/react';
-import { SiReact } from "react-icons/si";
+import ContactSection from './ContactSection';
+import GitHubCalendar from 'react-github-calendar';
+import { BiHomeAlt, BiUser, BiCodeAlt, BiBriefcaseAlt, BiEnvelope } from "react-icons/bi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { SiReact, SiJavascript, SiTypescript, SiNodedotjs, SiTailwindcss, SiPostgresql, SiMongodb, SiGit } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 import { useEffect, useState } from 'react';
-import { GitHubCalendar } from 'react-github-calendar';
-import ContactSection from './Contactsection';
+
 
 const skills = [
-  { icon: <SiReact fill="#ffffff" size={36} />, name: "React" },
-  { icon: <Javascript fill="#ffffff" size="md" />, name: "JS" },
-  { icon: <Typescript fill="#ffffff" size="md" />, name: "TS" },
-  { icon: <Nodejs fill="#ffffff" size="md" />, name: "Node" },
-  { icon: <TailwindCss fill="#ffffff" size="md" />, name: "Tailwind" },
-  { icon: <Postgresql fill="#ffffff" size="md" />, name: "PostgreSQL" },
-  { icon: <Mongodb fill="#ffffff" size="md" />, name: "Mongo" },
-  { icon: <CSharp fill="#ffffff" size="md" />, name: "C#" },
-  { icon: <Git fill="#ffffff" size="md" />, name: "Git" },
+  { icon: <SiReact color="#ffffff" size={36} />, name: "React" },
+  { icon: <SiJavascript color="#ffffff" size={36} />, name: "JS" },
+  { icon: <SiTypescript color="#ffffff" size={36} />, name: "TS" },
+  { icon: <SiNodedotjs color="#ffffff" size={36} />, name: "Node" },
+  { icon: <SiTailwindcss color="#ffffff" size={36} />, name: "Tailwind" },
+  { icon: <SiPostgresql color="#ffffff" size={36} />, name: "PostgreSQL" },
+  { icon: <SiMongodb color="#ffffff" size={36} />, name: "Mongo" },
+  { icon: <TbBrandCSharp color="#ffffff" size={36} />, name: "C#" },
+  { icon: <SiGit color="#ffffff" size={36} />, name: "Git" },
 ];
 
 const navLinks = [
-  { href: "#home", icon: <Home />, label: "Home" },
-  { href: "#about", icon: <User />, label: "About" },
-  { href: "#skills", icon: <Code />, label: "Skills" },
-  { href: "#projects", icon: <BriefcaseAlt />, label: "Projects" },
-  { href: "#contact", icon: <EnvelopeAlt />, label: "Contacts" },
+  { href: "#home", icon: <BiHomeAlt size={24} />, label: "Home" },
+  { href: "#about", icon: <BiUser size={24} />, label: "About" },
+  { href: "#skills", icon: <BiCodeAlt size={24} />, label: "Skills" },
+  { href: "#projects", icon: <BiBriefcaseAlt size={24} />, label: "Projects" },
+  { href: "#contact", icon: <BiEnvelope size={24} />, label: "Contacts" },
 ];
 
 const words = ["Developer", "Designer"];
@@ -168,9 +171,9 @@ function App() {
               </a>
             </div>
             <div className='flex justify-center gap-6 mt-6 md:mt-8'>
-              <a href="https://github.com/gdenis12" target="_blank" rel="noreferrer" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><Github size="lg" /></a>
-              <a href="https://www.linkedin.com/in/huba-denis-3bb786301" target="_blank" rel="noreferrer" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><LinkedinSquare size="lg" /></a>
-              <a href="mailto:gubadenisweb@gmail.com" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><Envelope pack="filled" size="lg" /></a>
+              <a href="https://github.com/gdenis12" target="_blank" rel="noreferrer" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><FiGithub size={36} /></a>
+              <a href="https://www.linkedin.com/in/huba-denis-3bb786301" target="_blank" rel="noreferrer" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><FiLinkedin size={36} /></a>
+              <a href="mailto:gubadenisweb@gmail.com" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><BiEnvelope size={36} /></a>
             </div>
           </div>
         </div>
