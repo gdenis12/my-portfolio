@@ -17,7 +17,7 @@ export default function ContactSection() {
         };
 
         try {
-            const res = await fetch("http://localhost:5000/send-email", {
+            const res = await fetch("https://my-portfolio-backend-ww73.onrender.com/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function ContactSection() {
                     Fill out the form and I'll get back to you
                 </p>
 
-                {/* ВАЖЛИВО: submit тепер на form */}
+
                 <form
                     ref={formRef}
                     onSubmit={handleSubmit}
