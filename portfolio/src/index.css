@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-radial {
+    background: radial-gradient(circle at center, #001233 0%, #000814 100%);
+}
+@layer base {
+    body {
+        @apply font-sans;
+    }
+}
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.animate-shimmer {
+    animation: shimmer 2.5s linear infinite;
+}
+/* width */
+::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+    background: #0f1614;
+    border-radius: 10px;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+    background: #00e676;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00c853;
+}
+*:focus,
+*:focus-visible,
+*:focus-within {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+/* index.css */
+.recharts-wrapper div {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+* :focus {
+    outline: none !important;
+}
+html,
+body {
+    background-color: #0f1614;
+    overflow-x: hidden;
+}
