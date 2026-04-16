@@ -6,10 +6,7 @@ const axios = require("axios");
 const app = express();
 
 const corsOptions = {
-    origin: [
-        "https://gdenis12.github.io/my-portfolio/",
-        "http://localhost:5173",
-    ],
+    origin: ["https://gdenis12.github.io", "http://localhost:5173"],
     optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));

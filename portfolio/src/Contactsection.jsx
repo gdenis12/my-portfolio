@@ -17,7 +17,7 @@ export default function ContactSection() {
         };
 
         try {
-            const res = await fetch("https://my-portfolio-backend-ww73.onrender.com/", {
+            const res = await fetch("https://my-portfolio-backend-ww73.onrender.com/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
