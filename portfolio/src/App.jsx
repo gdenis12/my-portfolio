@@ -2,7 +2,7 @@ import avatar from './assets/avatar.jpg'
 import './App.css'
 import SkillsRadar from './SkillsRadar';
 import ContactSection from './ContactSection';
-import GitHubCalendar from 'react-github-calendar';
+import { ActivityCalendar } from 'react-activity-calendar';
 import { BiHomeAlt, BiUser, BiCodeAlt, BiBriefcaseAlt, BiEnvelope } from "react-icons/bi";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { SiReact, SiJavascript, SiTypescript, SiNodedotjs, SiTailwindcss, SiPostgresql, SiMongodb, SiGit } from "react-icons/si";
@@ -34,11 +34,24 @@ const words = ["Developer", "Designer"];
 const navItemClass = 'flex gap-1 p-2 md:p-3 rounded-full transition-all duration-500 ease-in-out hover:bg-gray-300/5 text-sm md:text-base';
 
 function App() {
+  const [activity, setActivity] = useState([]);
   const avatarUrl = avatar;
   const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("https://github-contributions-api.jogruber.de/v4/gdenis12")
+      .then(res => res.json())
+      .then(data => {
+        if (data?.contributions) {
+          setActivity(data.contributions);
+        }
+      })
+      .catch(err => console.error("GitHub fetch error:", err));
+  }, []);
+
 
   useEffect(() => {
     const current = words[index];
@@ -117,14 +130,18 @@ function App() {
             <div className="bg-[#0f1614] p-4 md:p-6 rounded-2xl shadow-lg border border-[#1f2a27] transition duration-300 hover:shadow-[0_0_30px_rgba(0,230,118,0.2)] hover:-translate-y-1 overflow-x-auto">
               <h3 className="text-white text-lg mb-4">GitHub Activity</h3>
               <div className="min-w-0">
-                <GitHubCalendar
-                  username="gdenis12"
-                  colorScheme="dark"
-                  theme={{ dark: ['#0f1614', '#00e676'] }}
-                  blockSize={12}
-                  blockMargin={3}
-                  fontSize={12}
-                />
+                {activity.length > 0 && (
+                  <ActivityCalendar
+                    data={activity}
+                    blockSize={12}
+                    blockMargin={3}
+                    fontSize={12}
+                    showWeekdayLabels
+                    theme={{
+                      dark: ['#0f1614', '#1f2a27', '#2e7d32', '#00e676', '#00c853'],
+                    }}
+                  />
+                )}
               </div>
               <div className="grid grid-cols-2 gap-3 mt-6">
                 {[
