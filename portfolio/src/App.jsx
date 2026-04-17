@@ -271,7 +271,33 @@ function App() {
         <div id="contact">
           <ContactSection />
         </div>
+        <footer className='bg-black/40 h-24 flex items-center justify-between px-8 text-sm text-zinc-500 border-t border-white/10 mt-16'>
 
+          <div>
+            © 2026 gdenis. All rights reserved.
+          </div>
+
+          <div className='flex flex-col gap-2 items-center'>
+            <div className='flex gap-4'>
+              <a className='hover:text-zinc-400 transition-colors duration-200' href='#home'>Home</a>
+              <a className='hover:text-zinc-400 transition-colors duration-200' href='#about'>About</a>
+              <a className='hover:text-zinc-400 transition-colors duration-200' href='#skills'>Skills</a>
+              <a className='hover:text-zinc-400 transition-colors duration-200' href='#projects'>Projects</a>
+              <a className='hover:text-zinc-400 transition-colors duration-200' href='#contact'>Contact</a>
+            </div>
+
+            {/* <div className='flex gap-4'>
+
+            </div> */}
+          </div>
+
+          <div className='flex gap-3'>
+            <a href="https://github.com/gdenis12" target="_blank" rel="noreferrer" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><FiGithub size={32} /></a>
+            <a href="https://www.linkedin.com/in/huba-denis-3bb786301" target="_blank" rel="noreferrer" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><FiLinkedin size={32} /></a>
+            <a href="mailto:gubadenisweb@gmail.com" className='text-zinc-400 hover:text-[#00e676] hover:scale-110 transition-all duration-200'><BiEnvelope size={32} /></a>
+          </div>
+
+        </footer>
       </div>
     </>
   );
