@@ -179,7 +179,7 @@ function App() {
                 My Projects
               </a>
               <a
-                href="/CV.pdf"
+                href={`${import.meta.env.BASE_URL}CV.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 border-2 border-white/30 hover:scale-105 hover:bg-white/25 hover:border-white/55 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-full font-bold transition-all duration-200 cursor-pointer text-sm md:text-base"
